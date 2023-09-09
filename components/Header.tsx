@@ -7,7 +7,7 @@ const Header = () => {
       <div>
         <button
           type="button"
-          className="h-14 rounded bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ..."
+          className="h-1 4 rounded bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 ..."
         >
           Hover me
         </button>
