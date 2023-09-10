@@ -31,3 +31,17 @@ body {
     rgba(249, 250, 252, 1) 62%
   );
 }
+.Header .ticket-btn {
+  color: #124948;
+  font-weight: 700;
+  background-color: #f9c9cb;
+  height: 3.2rem;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-top: 14px;
+  transition: all 200ms ease-in-out;
+}
+.Header .ticket-btn:hover {
+  color: #fff;
+  background-color: #124948;
+}
