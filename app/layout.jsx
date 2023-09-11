@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         <div className="rainbow h-20"></div>
         <div className="container">
           <Header />
-          <div className="container mt-5" dir="rtl">
+          <div className="container mt-5 pt-3" dir="rtl">
             {children}
           </div>
         </div>

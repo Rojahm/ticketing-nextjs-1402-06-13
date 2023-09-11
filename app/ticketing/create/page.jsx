@@ -14,10 +14,10 @@ const CreateTicket = () => {
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
           <Form.Label>شرح</Form.Label>
-          <Form.Control as="textarea" rows={3} placeholder="شرح" />
+          <Form.Control as="textarea" rows={4} placeholder="شرح" />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button variant="success" type="submit">
           ثبت
         </Button>
       </Form>
