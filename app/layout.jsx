@@ -18,9 +18,11 @@ export default function RootLayout({ children }) {
       <body className={noto.className}>
         <div className="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 h-2"></div>
         <div className="rainbow h-20"></div>
-        <Header />
-        <div className="container mt-5" dir="rtl">
-          {children}
+        <div className="container">
+          <Header />
+          <div className="container mt-5" dir="rtl">
+            {children}
+          </div>
         </div>
         <Footer />
       </body>
