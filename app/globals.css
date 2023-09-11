@@ -40,42 +40,7 @@ body {
   border-radius: 0px 0px 15px 15px;
 }
 .rainbow {
-  background: rgb(236, 77, 147);
-  background: linear-gradient(
-    81deg,
-    rgba(236, 77, 147, 1) 0%,
-    rgba(235, 108, 105, 1) 17%,
-    rgba(234, 176, 12, 1) 100%
-  );
-  transition: all 200ms ease-in-out;
-}
-.rainbow:hover {
-  background: rgb(236, 77, 147);
-  background: linear-gradient(
-    81deg,
-    rgba(236, 77, 147, 1) 0%,
-    rgba(235, 108, 105, 1) 47%,
-    rgba(244, 191, 167, 1) 77%,
-    rgba(234, 176, 12, 1) 100%
-  );
-}
-.rainbow2 {
-  background: rgb(51, 223, 147);
-  background: linear-gradient(
-    81deg,
-    rgba(51, 223, 147, 1) 0%,
-    rgba(12, 146, 234, 1) 100%
-  );
-  transition: all 500ms ease-in-out;
-}
-.rainbow2:hover {
-  background: rgb(236, 77, 147);
-  background: linear-gradient(
-    81deg,
-    rgba(236, 77, 147, 1) 0%,
-    rgba(235, 108, 105, 1) 17%,
-    rgba(234, 176, 12, 1) 100%
-  );
+  @apply bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500;
 }
 .Header {
   display: flex;
@@ -118,6 +83,7 @@ body {
   color: rgba(18, 73, 72, 0.7);
   cursor: pointer;
 }
+
 .Box:hover {
   box-shadow: -1px -1px 5px -2px rgba(0, 0, 0, 0.3);
   border: none;

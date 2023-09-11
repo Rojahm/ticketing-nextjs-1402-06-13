@@ -21,7 +21,7 @@ const Header = () => {
             width={140}
             height={140}
             alt="lssi it logo"
-            className="rounded p-3 drop-shadow-sm shadow py-3 hover:cursor-pointer hover:drop-shadow-md hover:shadow-transparent mb-5"
+            className="rounded p-3 drop-shadow-sm shadow py-3 hover:cursor-pointer hover:drop-shadow-md hover:shadow-transparent"
           />
         </Link>
         <div className="user">
