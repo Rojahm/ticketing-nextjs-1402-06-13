@@ -25,7 +25,7 @@ const Header = () => {
           />
         </Link>
         <div className="user">
-          <Link href={"/ticketing/create"} className="ticket-btn">
+          <Link href={"/ticketing/create"} className="ticket-btn shadow">
             ارسال تیکت
             <FaQuestionCircle />
           </Link>
