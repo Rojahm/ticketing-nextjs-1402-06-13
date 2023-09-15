@@ -1,4 +1,4 @@
-import Loading from "../(dashboard)/loading";
+import Loading from "../loading";
 import { Suspense } from "react";
 import TicketListPage from "./list/page";
 

@@ -6,7 +6,6 @@ import {
   FaUserAlt,
   FaQuestionCircle,
 } from "react-icons/fa";
-import Nav from "./Nav";
 import Link from "next/link";
 
 const Header = () => {
@@ -30,7 +29,7 @@ const Header = () => {
             <FaQuestionCircle />
           </Link>
           <div className="user-menu">
-            <Link href={"/auth"}>
+            <Link href={"/login"}>
               <FaSignInAlt className={"icon shadow"} />
             </Link>
             {/* <FaSignOutAlt className={"icon shadow"} />
@@ -38,7 +37,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <Nav />
     </>
   );
 };
