@@ -1,4 +1,4 @@
-import Loading from "../loading";
+import Loading from "../(dashboard)/loading";
 import { Suspense } from "react";
 import TicketListPage from "./list/page";
 
@@ -9,7 +9,7 @@ function TicketPage() {
         <div>
           <h2>لیست تیکت ها</h2>
           <p>
-            <small>تیکت های باز.</small>
+            <small>تیکت های باز:</small>
           </p>
         </div>
       </nav>
