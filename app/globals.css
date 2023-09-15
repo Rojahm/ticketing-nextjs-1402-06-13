@@ -34,6 +34,9 @@ body {
     rgba(249, 250, 252, 1) 62%
   );
 }
+.Loading {
+  margin: 0 auto;
+}
 .container {
   background-color: rgba(248, 248, 248, 0.603);
   padding-bottom: 100px;

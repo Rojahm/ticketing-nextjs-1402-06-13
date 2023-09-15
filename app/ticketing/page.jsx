@@ -1,3 +1,5 @@
+import Loading from "../loading";
+import { Suspense } from "react";
 import TicketListPage from "./list/page";
 
 function TicketPage() {
@@ -5,13 +7,15 @@ function TicketPage() {
     <main>
       <nav>
         <div>
-          <h2>Tickets</h2>
+          <h2>لیست تیکت ها</h2>
           <p>
-            <small>Currently Open Tickets.</small>
+            <small>تیکت های باز.</small>
           </p>
         </div>
       </nav>
-      <TicketListPage />
+      <Suspense fallback={<Loading />}>
+        <TicketListPage />
+      </Suspense>
     </main>
   );
 }

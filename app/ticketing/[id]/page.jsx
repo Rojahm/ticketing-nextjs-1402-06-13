@@ -1,13 +1,13 @@
 import { notFound } from "next/navigation";
 
-// get params ahead to render static pages for every params on server
-export async function generateStaticParams() {
-  const res = await fetch("http://localhost:4000/tickets");
-  const tickets = res.json();
-  return tickets.map((ticket) => ({
-    id: ticket.id,
-  }));
-}
+// // get params ahead to render static pages for every params on server
+// export async function generateStaticParams() {
+//   const res = await fetch("http://localhost:4000/tickets");
+//   const tickets = res.json();
+//   return tickets.map((ticket) => ({
+//     id: ticket.id,
+//   }));
+// }
 
 async function getTickets(id) {
   const res = await fetch(`http://localhost:4000/tickets/${id}`);
