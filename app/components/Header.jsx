@@ -14,6 +14,7 @@ const Header = () => {
       <div className="Header">
         <Link href={"/"}>
           <Image
+            priority={true}
             src={
               "/img/lssi-high-resolution-logo-color-on-transparent-background.webp"
             }

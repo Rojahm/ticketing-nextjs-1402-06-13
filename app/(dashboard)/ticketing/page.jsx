@@ -2,6 +2,11 @@ import Loading from "../loading";
 import { Suspense } from "react";
 import TicketListPage from "./list/page";
 
+export const metadata = {
+  title: "IT Dep. | Tickets",
+  description: "Ticket List",
+};
+
 function TicketPage() {
   return (
     <main>
