@@ -1,53 +1,9 @@
 {
   "Message": {
-    "Subject": "test subject",
-    "TextBody": "test text body",
-    "RedirectLink": "",
-    "Sender": {
-      "SendMailApiParticipant": {
-        "ContactId": "6afa4754-76aa-4c62-81a1-2ce3c3dce355",
-        "BaridAddress": "",
-        "NationalCode": "",
-        "IdentificationCode": "",
-        "NtAccount": "",
-        "IsForPerson": "false"
-      }
-    },
-    "Receivers": {
-      "SendMailApiParticipant": {
-        "ContactId": "d2418a15-1873-44b9-b707-ddbfd5cb6855",
-        "BaridAddress": "",
-        "NationalCode": "",
-        "IdentificationCode": "",
-        "NtAccount": "",
-        "IsForPerson": "false"
-      }
-    },
-    "CcReceivers": {
-      "SendMailApiParticipant": {
-        "ContactId": "1b19e982-2cec-4db3-afe3-ca5db3c1f992",
-        "BaridAddress": "",
-        "NationalCode": "",
-        "IdentificationCode": "",
-        "NtAccount": "",
-        "IsForPerson": "false"
-      }
-    },
-    "BccReceivers": {
-      "SendMailApiParticipant": {
-        "ContactId": "2ad2f554-b64c-48d0-9a65-b71f8a47a638",
-        "BaridAddress": "",
-        "NationalCode": "",
-        "IdentificationCode": "",
-        "NtAccount": "",
-        "IsForPerson": "false"
-      }
-    },
-    "Priority": "1",
-    "Privacy": "1",
-    "ReferenceNumber": ""
-  },
-  "Attachments": {}
+    "Subject": "Send from Api",
+    "Sender": { "ContactId": "6afa4754-76aa-4c62-81a1-2ce3c3dce355" },
+    "Receivers": [{ "ContactId": "d2418a15-1873-44b9-b707-ddbfd5cb6855" }]
+  }
 }
 // Authorization: Basic <credentials>
 // motlagh:97cfca5e-1129-4f1f-b938-23fad54988da
