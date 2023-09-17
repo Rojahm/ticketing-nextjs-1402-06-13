@@ -1,8 +1,12 @@
 "use client";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import AuthForm from "../AuthForm";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Signup = () => {
+  const router = useRouter();
+  const [error, setError] = useState("");
   const handleSubmit = async (e, email, password) => {
     e.preventDefault();
 
@@ -16,8 +20,10 @@ const Signup = () => {
     });
 
     if (error) {
+      setError(error.message);
     }
     if (!error) {
+      router.push("/verify");
     }
   };
 
@@ -26,6 +32,7 @@ const Signup = () => {
       <div>
         <h2>Sign up</h2>
         <AuthForm handleSubmit={handleSubmit} />
+        {error && <div className="text-center">{error}</div>}
       </div>
     </>
   );
