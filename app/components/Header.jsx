@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import {
   FaSignInAlt,
@@ -29,13 +28,6 @@ const Header = () => {
             ارسال تیکت
             <FaQuestionCircle />
           </Link>
-          <div className="user-menu">
-            <Link href={"/login"}>
-              <FaSignInAlt className={"icon shadow"} />
-            </Link>
-            {/* <FaSignOutAlt className={"icon shadow"} />
-            <FaUserAlt className={"icon shadow"} /> */}
-          </div>
         </div>
       </div>
     </>

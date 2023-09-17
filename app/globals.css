@@ -73,16 +73,16 @@ body {
   color: var(--accent-rgb);
   background-color: var(--primary-rgb);
 }
-.Header .user-menu {
+.User .user-menu {
   display: flex;
 }
-.Header .user-menu .icon {
+.User .user-menu .icon {
   border: 1px solid var(--primary-rgb);
   font-size: 30px;
   color: rgba(18, 73, 72, 0.95);
   margin: 3px;
 }
-.Header .user-menu .icon:hover {
+.User .user-menu .icon:hover {
   border: 1px solid var(--secondary-rgb);
   color: rgba(18, 73, 72, 0.7);
   cursor: pointer;
