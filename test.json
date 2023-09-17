@@ -1,7 +1,7 @@
 {
   "Message": {
-    "Subject": "ticketing-nextjs-1402-06-13",
-    "TextBody": "0.1.0",
+    "Subject": "test subject",
+    "TextBody": "test text body",
     "RedirectLink": "",
     "Sender": {
       "SendMailApiParticipant": {
@@ -43,10 +43,11 @@
         "IsForPerson": "false"
       }
     },
-    "Priority": "",
-    "Privacy": "",
+    "Priority": "1",
+    "Privacy": "1",
     "ReferenceNumber": ""
-  }
+  },
+  "Attachments": {}
 }
 // Authorization: Basic <credentials>
 // motlagh:97cfca5e-1129-4f1f-b938-23fad54988da
