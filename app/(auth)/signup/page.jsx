@@ -1,14 +1,19 @@
 "use client";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import AuthForm from "../AuthForm";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+//client component
+import AuthForm from "../AuthForm";
 
 const Signup = () => {
   const router = useRouter();
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleSubmit = async (e, email, password) => {
     e.preventDefault();
+    setIsLoading(true);
+    setError("");
 
     const supabase = createClientComponentClient();
     const { error } = await supabase.auth.signUp({
@@ -28,13 +33,15 @@ const Signup = () => {
   };
 
   return (
-    <>
-      <div>
-        <h2>Sign up</h2>
-        <AuthForm handleSubmit={handleSubmit} />
-        {error && <div className="text-center">{error}</div>}
-      </div>
-    </>
+    <div className="auth-form">
+      <h4 className="text-center mt-5">ثبت نام</h4>
+      <AuthForm
+        handleSubmit={handleSubmit}
+        text={"ثبت نام"}
+        isLoading={isLoading}
+      />
+      {error && <div className="error">{error}</div>}
+    </div>
   );
 };
 

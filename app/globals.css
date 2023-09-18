@@ -35,10 +35,21 @@ body {
     rgba(249, 250, 252, 1) 62%
   );
 }
+.greeting {
+  font-size: 13px;
+  font-weight: 500;
+}
+.auth-form {
+  margin: 0 auto;
+  width: 60%;
+  max-width: 500px;
+  min-width: 200px;
+}
 .Loading {
   margin: 0 auto;
 }
 .container {
+  margin: 0;
   background-color: rgba(248, 248, 248, 0.603);
   padding-bottom: 100px;
   border-radius: 0px 0px 15px 15px;
@@ -47,14 +58,10 @@ body {
   @apply bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500;
 }
 .Header {
+  width: 45vw;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-}
-.Header .user {
-  width: 40%;
-  display: flex;
-  justify-content: space-evenly;
 }
 .Header .ticket-btn {
   text-decoration: none;

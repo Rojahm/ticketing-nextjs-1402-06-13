@@ -2,7 +2,6 @@ import "./globals.css";
 // add bootstrap css
 import "bootstrap/dist/css/bootstrap.css";
 import { Noto_Sans_Arabic } from "next/font/google";
-import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 export const metadata = {
@@ -15,12 +14,8 @@ export default function RootLayout({ children }) {
     <html>
       <body lang="en">
         <div className="rainbow h-2"></div>
-
-        <div className="container">
-          <Header />
-          <div className="container mt-5 pt-3" dir="rtl">
-            {children}
-          </div>
+        <div className="container" dir="rtl">
+          {children}
         </div>
         <Footer />
       </body>

@@ -76,40 +76,6 @@ function CreateForm() {
           {!isLoading && <span>Add Ticket</span>}
         </Button>
       </Form>
-      {/* <form onSubmit={handleSubmit} className="">
-        <label>
-          <span>Title:</span>
-          <input
-            required
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-        </label>
-        <label>
-          <span>شرح:</span>
-          <textarea
-            required
-            value={body}
-            onChange={(e) => setBody(e.target.value)}
-          />
-        </label>
-        <label>
-          <span>Priority:</span>
-          <select
-            value={priority}
-            onChange={(e) => setPriority(e.target.value)}
-          >
-            <option value="low">Low Priority</option>
-            <option value="medium">Medium Priority</option>
-            <option value="high">High Priority</option>
-          </select>
-        </label>
-        <button className="btn-primary" disabled={isLoading}>
-          {isLoading && <span>Adding...</span>}
-          {!isLoading && <span>Add Ticket</span>}
-        </button>
-      </form> */}
     </>
   );
 }
