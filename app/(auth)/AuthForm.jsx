@@ -36,12 +36,10 @@ function AuthForm({ handleSubmit, text, isLoading }) {
           />
         </div>
       </div>
-      {isLoading && (
-        <button disabled className="btn btn-success">
-          ...
-        </button>
-      )}
-      {!isLoading && <button className="btn btn-success">{text}</button>}
+
+      <button disabled={isLoading} className="btn btn-success">
+        {text}
+      </button>
     </form>
   );
 }

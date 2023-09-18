@@ -16,20 +16,25 @@ function CreateForm() {
     e.preventDefault();
     setIsLoading(true);
 
-    const ticket = {
+    const newTicket = {
       title,
       body,
       priority,
-      user_email: "lssi@lssi.ir",
     };
 
-    const res = await fetch("http://localhost:4000/tickets", {
+    const res = await fetch("http://localhost:3000/api/tickets", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(ticket),
+      body: JSON.stringify(newTicket),
     });
 
-    if (res.status === 201) {
+    const data = await res.json();
+
+    if (data.error) {
+      setIsLoading(false);
+      console.log(error.message);
+    }
+    if (data.data) {
       router.refresh();
       router.push("/ticketing");
     }

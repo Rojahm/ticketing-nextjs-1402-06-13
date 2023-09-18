@@ -1,42 +1,63 @@
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
+import DeleteButton from "./DeleteButton";
 
 export async function generateMetadata({ params: { id } }) {
-  const res = await fetch(`http://localhost:4000/tickets/${id}`);
-  const ticket = await res.json();
+  const supabase = createServerComponentClient({ cookies });
+  const { data: ticket } = await supabase
+    .from("Tickets")
+    .select()
+    .eq("id", id)
+    .single();
   return {
-    title: `IT Dep. | Ticket #${id} | ${ticket.title}`,
-    description: `${ticket.title}`,
+    title: `IT Dep. | Ticket #${id} | ${ticket?.title || "Tickets not found"} `,
+    description: `${ticket?.title || "Tickets not found"}`,
   };
 }
 export const dynamicParms = true;
 // get params ahead to render static pages for every params on server
-export async function generateStaticParams() {
-  const res = await fetch("http://localhost:4000/tickets");
-  const tickets = await res.json();
-  return tickets.map((ticket) => ({
-    id: ticket.id,
-  }));
-}
+// export async function generateStaticParams() {
+//   const res = await fetch("http://localhost:4000/tickets");
+//   const tickets = await res.json();
+//   return tickets.map((ticket) => ({
+//     id: ticket.id,
+//   }));
+// }
 
 async function getTickets(id) {
-  const res = await fetch(`http://localhost:4000/tickets/${id}`);
-  if (!res.ok) {
+  const supabase = createServerComponentClient({ cookies });
+  const { data: ticket } = await supabase
+    .from("Tickets")
+    .select()
+    .eq("id", id)
+    .single();
+
+  if (!ticket) {
     notFound();
   }
-  const ticket = res.json();
   return ticket;
 }
 
 async function TicketDetailsPage({ params: { id } }) {
   const ticket = await getTickets(id);
+
+  //current user session
+  const supabase = createServerComponentClient({ cookies });
+  const { data } = await supabase.auth.getSession();
+  const currentUserEmail = data.session.user.email;
+
   return (
     <main>
-      <nav>
+      <nav className="flex">
         <h2>تیکت #{id}:</h2>
+        <div className="mr-auto">
+          {currentUserEmail === ticket.user_email && <DeleteButton id={id} />}
+        </div>
       </nav>
       <div className="card">
         <h3>{ticket.title}</h3>
-        <small>{ticket.user_email}</small>
+        <small>توسط: {ticket.user_email}</small>
         <p>{ticket.body}</p>
         <div className={`pill ${ticket.priority}`}>
           {ticket.priority} priority
