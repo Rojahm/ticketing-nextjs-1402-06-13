@@ -11,9 +11,12 @@ function DeleteButton({ id }) {
 
   const handleClick = async () => {
     setIsLoading(true);
-    const res = await fetch(`http://localhost:3000/api/tickets/${id}`, {
-      method: "DELETE",
-    });
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_URL}/api/tickets/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
 
     const data = await res.json();
 

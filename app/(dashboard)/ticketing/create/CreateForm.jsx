@@ -8,6 +8,7 @@ export const dynamic = "force-dynamic";
 
 function CreateForm() {
   const router = useRouter();
+
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [priority, setPriority] = useState("low");
@@ -16,14 +17,13 @@ function CreateForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-
     const newTicket = {
       title,
       body,
       priority,
     };
 
-    const res = await fetch("http://localhost:3000/api/tickets", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/tickets`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newTicket),

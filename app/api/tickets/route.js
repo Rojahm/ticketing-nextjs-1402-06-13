@@ -5,7 +5,6 @@ import { cookies } from "next/headers";
 export const dynamic = "forece-dynamic";
 
 export async function POST(request) {
-  console.log(request);
   const ticket = await request.json();
 
   //get supabase instance
@@ -25,6 +24,6 @@ export async function POST(request) {
     })
     .select()
     .single();
-  console.log(session);
+
   return NextResponse.json({ data, error });
 }
