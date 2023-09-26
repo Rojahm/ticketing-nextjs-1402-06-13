@@ -26,6 +26,7 @@ const Login = () => {
       setIsLoading(false);
     }
     if (!error) {
+      console.log(error);
       router.push("/");
     }
   };

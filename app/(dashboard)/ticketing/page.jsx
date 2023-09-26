@@ -6,6 +6,7 @@ export const metadata = {
   title: "IT Dep. | Tickets",
   description: "Ticket List",
 };
+export const dynamic = "force-dynamic";
 
 function TicketPage() {
   return (
