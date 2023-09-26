@@ -6,6 +6,8 @@ import Navigation from "../components/Nav";
 import User from "../components/User";
 import Header from "../components/Header";
 
+export const dynamic = "force-dynamic";
+
 const DashboardLayout = async ({ children }) => {
   const supabase = createServerComponentClient({ cookies });
   const { data } = await supabase.auth.getSession();
