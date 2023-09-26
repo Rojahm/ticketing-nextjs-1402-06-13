@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 //custom components
 import AuthForm from "../AuthForm";
 
+export const dynamic = "force-dynamic";
+
 const Login = () => {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);

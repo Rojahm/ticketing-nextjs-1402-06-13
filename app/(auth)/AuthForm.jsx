@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 
+export const dynamic = "force-dynamic";
+
 function AuthForm({ handleSubmit, text, isLoading }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
