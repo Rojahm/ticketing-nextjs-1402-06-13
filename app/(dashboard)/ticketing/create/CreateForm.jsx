@@ -4,6 +4,8 @@ import Form from "react-bootstrap/Form";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
+export const dynamic = "force-dynamic";
+
 function CreateForm() {
   const router = useRouter();
   const [title, setTitle] = useState("");
