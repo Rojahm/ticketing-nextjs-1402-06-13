@@ -23,11 +23,14 @@ function CreateForm() {
       priority,
     };
 
-    const res = await fetch("http://localhost:3000/api/tickets", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newTicket),
-    });
+    const res = await fetch(
+      "https://ticketing-nextjs-1402-06-13-git-master-rojahm.vercel.app/api/tickets",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newTicket),
+      }
+    );
 
     const data = await res.json();
 
