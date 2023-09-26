@@ -6,7 +6,6 @@ import { useState } from "react";
 
 function CreateForm() {
   const router = useRouter();
-
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [priority, setPriority] = useState("low");
