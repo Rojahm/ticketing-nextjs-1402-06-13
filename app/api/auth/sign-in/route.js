@@ -25,7 +25,7 @@ export async function POST(request) {
       }
     );
   }
-  console.log(requestUrl);
+
   return NextResponse.redirect(process.env.NEXT_PUBLIC_URL, {
     // a 301 status is required to redirect from a POST to a GET route
     status: 301,
