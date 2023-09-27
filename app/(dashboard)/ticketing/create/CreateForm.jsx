@@ -27,7 +27,7 @@ function CreateForm() {
     // console.log(process.env.NEXT_PUBLIC_URL);
     // console.log(url);
 
-    const res = await fetch("https://helpdesk.rojahm.ir/api/tickets", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/tickets`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newTicket),
