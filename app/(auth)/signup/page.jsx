@@ -9,13 +9,13 @@ const Signup = () => {
   const router = useRouter();
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const supabase = createClientComponentClient();
 
   const handleSubmit = async (e, email, password) => {
     e.preventDefault();
     setIsLoading(true);
     setError("");
 
-    const supabase = createClientComponentClient();
     const { error } = await supabase.auth.signUp({
       email,
       password,
