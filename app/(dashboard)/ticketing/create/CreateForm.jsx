@@ -17,13 +17,17 @@ function CreateForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+
     const newTicket = {
       title,
       body,
       priority,
     };
+    // const url = `${process.env.NEXT_PUBLIC_URL}/api/tickets`;
+    // console.log(process.env.NEXT_PUBLIC_URL);
+    // console.log(url);
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/tickets`, {
+    const res = await fetch("https://helpdesk.rojahm.ir/api/tickets", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newTicket),
@@ -43,45 +47,45 @@ function CreateForm() {
 
   return (
     <>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Label>موضوع</Form.Label>
-          <Form.Control
-            size="md"
+      <form onSubmit={handleSubmit} className="w-1/2">
+        <label>
+          <span>موضوع:</span>
+          <input
+            required
             type="text"
-            placeholder="موضوع"
+            name="title"
             value={title}
             autoFocus={true}
             onChange={(e) => setTitle(e.target.value)}
           />
-        </Form.Group>
-        <Form.Group>
-          <Form.Label>اولویت</Form.Label>
-          <Form.Select
-            value={priority}
-            onChange={(e) => setPriority(e.target.value)}
-          >
-            <option value={"low"}>معمولی</option>
-            <option value={"medium"}>بالا</option>
-            <option value={"high"}>بحرانی</option>
-          </Form.Select>
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-          <Form.Label>شرح</Form.Label>
-          <Form.Control
-            as="textarea"
-            rows={4}
-            placeholder="شرح"
+        </label>
+        <label>
+          <span>شرح:</span>
+          <textarea
+            required
+            name="body"
             value={body}
             onChange={(e) => setBody(e.target.value)}
           />
-        </Form.Group>
+        </label>
+        <label>
+          <span>اولویت:</span>
+          <select
+            name="priority"
+            value={priority}
+            onChange={(e) => setPriority(e.target.value)}
+          >
+            <option value="low">معمولی</option>
+            <option value="medium">بالا</option>
+            <option value="high">بحرانی</option>
+          </select>
+        </label>
 
         <Button variant="success" type="submit" disabled={isLoading}>
           {isLoading && <span>Adding...</span>}
           {!isLoading && <span>Add Ticket</span>}
         </Button>
-      </Form>
+      </form>
     </>
   );
 }
