@@ -4,8 +4,13 @@ import { NextResponse } from "next/server";
 export async function middleware(req) {
   const res = NextResponse.next();
   const supabase = createMiddlewareClient({ req, res });
-  console.log(req);
-  console.log(res);
-  await supabase.auth.getSession();
-  return res;
+
+  const { data, error } = await supabase.auth.getSession();
+
+  if (error) {
+    await supabase.auth.refreshSession();
+    return ["errorrrrrrrrrrrrrr", res];
+  } else {
+    return res;
+  }
 }
